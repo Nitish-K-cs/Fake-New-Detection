@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake News Detector</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔍 Fake News Detector</h1>
+            <p class="subtitle">Check if the news is fake or real</p>
+        </header>
+
+        <main>
+            <div class="form-container">
+                <form id="newsForm">
+                    <div class="input-group">
+                        <label for="newsText">Enter News Text:</label>
+                        <textarea
+                            id="newsText"
+                            name="newsText"
+                            placeholder="Paste or type the news article here..."
+                            rows="6"
+                            required
+                        ></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Analyze News</button>
+                </form>
+            </div>
+
+            <div id="loadingSpinner" class="loading hidden">
+                <div class="spinner"></div>
+                <p>Analyzing news...</p>
+            </div>
+
+            <div id="resultContainer" class="result-container hidden">
+                <div id="resultCard" class="result-card"></div>
+            </div>
+
+            <div id="errorContainer" class="error-container hidden">
+                <p id="errorMessage"></p>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Fake News Detector | Powered by Flask & Machine Learning</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
