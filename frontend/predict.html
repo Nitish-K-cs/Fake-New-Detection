@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vigilance Tech — Predict</title>
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/nav.css" />
+  <link rel="stylesheet" href="css/predict.css" />
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav>
+    <a class="nav-logo" href="index.html">Vigilance<span>Tech</span></a>
+    <div class="nav-links">
+      <a class="nav-link" id="nav-home"    href="index.html">Home</a>
+      <a class="nav-link" id="nav-predict" href="predict.html">Predict</a>
+      <a class="nav-link" id="nav-images"  href="images.html">Images</a>
+      <a class="nav-link" id="nav-about"   href="about.html">About</a>
+      <a class="nav-cta"                   href="predict.html">SCAN NOW</a>
+    </div>
+  </nav>
+
+  <!-- ── PREDICT CONTENT ── -->
+  <main class="predict-wrap">
+    <div class="section-label">AI Analysis</div>
+    <h1 class="section-title">Predict News Authenticity</h1>
+    <p class="section-desc">
+      Paste any news article, headline, or claim below. Our model will analyze it
+      for signs of misinformation or manipulation.
+    </p>
+
+    <!-- Input card -->
+    <div class="predict-card">
+      <label for="newsText">NEWS ARTICLE / HEADLINE</label>
+      <textarea
+        id="newsText"
+        placeholder="Paste or type the news article here… (Press Enter to submit, Shift+Enter for new line)"
+      ></textarea>
+      <button class="predict-submit" id="analyzeBtn" onclick="analyzeText()">
+        <span>🔍</span> Analyze Now
+      </button>
+    </div>
+
+    <!-- Spinner -->
+    <div class="spinner-wrap" id="spinnerWrap">
+      <div class="spinner"></div>
+      <span style="color:var(--muted);font-size:.9rem;">Analyzing content…</span>
+    </div>
+
+    <!-- Result box -->
+    <div class="result-box" id="resultBox">
+      <div class="result-label" id="resultLabel"></div>
+      <div class="result-detail" id="resultDetail"></div>
+
+      <!-- Confidence bar -->
+      <div class="confidence-bar-wrap">
+        <div class="confidence-meta">
+          <span>Confidence</span>
+          <span id="confVal"></span>
+        </div>
+        <div class="confidence-bar">
+          <div class="confidence-fill" id="confFill" style="width:0%"></div>
+        </div>
+      </div>
+
+      <!-- Probability breakdown (shown when backend returns probabilities) -->
+      <div class="probabilities" id="probSection" style="display:none;">
+        <h4>DETAILED PROBABILITIES</h4>
+        <div class="probability-item">
+          <div style="flex:1;">
+            <div class="probability-label">🚨 Fake News Probability</div>
+            <div class="probability-bar-container">
+              <div class="probability-bar-fill" id="fakeBar" style="width:0%"></div>
+            </div>
+          </div>
+          <div class="probability-value" id="fakeVal">—</div>
+        </div>
+        <div class="probability-item">
+          <div style="flex:1;">
+            <div class="probability-label">✅ Real News Probability</div>
+            <div class="probability-bar-container">
+              <div class="probability-bar-fill" id="realBar" style="width:0%;background:#4ade80;"></div>
+            </div>
+          </div>
+          <div class="probability-value" id="realVal">—</div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div>© 2026 <span>Vigilance Tech</span> — AI-Powered Forensic Analysis</div>
+    <div>Powered by Machine Learning &amp; NLP</div>
+  </footer>
+
+  <script src="js/nav.js"></script>
+  <script src="js/predict.js"></script>
+</body>
+</html>

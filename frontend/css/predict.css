@@ -1,0 +1,108 @@
+/* ═══════════════════
+   predict.css
+   ═══════════════════ */
+
+.predict-wrap {
+  max-width: 780px; margin: 0 auto; padding: 80px 48px;
+}
+.predict-wrap .section-label,
+.predict-wrap .section-title { text-align: center; }
+.predict-wrap .section-desc  { text-align: center; margin: 0 auto 40px; }
+
+.predict-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 20px; padding: 40px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.4);
+  position: relative; overflow: hidden;
+}
+.predict-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, var(--pink), var(--purple));
+}
+.predict-card label {
+  display: block; font-size: .8rem; font-weight: 600;
+  letter-spacing: .06em; color: var(--muted); margin-bottom: 10px;
+}
+.predict-card textarea {
+  width: 100%; background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.1); border-radius: 12px;
+  padding: 16px; color: var(--text); font-family: var(--font-body);
+  font-size: .95rem; resize: vertical; min-height: 160px;
+  outline: none; transition: border-color .2s;
+}
+.predict-card textarea:focus   { border-color: var(--pink); }
+.predict-card textarea::placeholder { color: #555566; }
+
+.predict-submit {
+  margin-top: 16px; width: 100%;
+  background: var(--pink); color: #fff; border: none; cursor: pointer;
+  padding: 15px; border-radius: 12px; font-family: var(--font-head);
+  font-size: 1rem; font-weight: 700; letter-spacing: .03em;
+  transition: background .2s, transform .15s;
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+}
+.predict-submit:hover    { background: #e0346d; transform: translateY(-2px); }
+.predict-submit:disabled { background: #555; cursor: not-allowed; transform: none; }
+
+/* ── Spinner ── */
+.spinner-wrap {
+  display: none; justify-content: center; align-items: center;
+  gap: 12px; margin-top: 20px;
+}
+.spinner {
+  width: 22px; height: 22px; border-radius: 50%;
+  border: 3px solid rgba(255,255,255,.1); border-top-color: var(--pink);
+  animation: spin .7s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── Result box ── */
+.result-box {
+  margin-top: 24px; border-radius: 14px; padding: 24px 28px;
+  border: 1px solid; display: none; animation: fadeIn .3s ease;
+}
+.result-box.real  { border-color: #4ade8055; background: rgba(74,222,128,.07); }
+.result-box.fake  { border-color: rgba(255,61,127,.4); background: rgba(255,61,127,.07); }
+.result-box.error { border-color: rgba(251,191,36,.4); background: rgba(251,191,36,.07); }
+
+.result-label {
+  font-family: var(--font-head); font-size: 1.3rem; font-weight: 800;
+  display: flex; align-items: center; gap: 10px; margin-bottom: 8px;
+}
+.real  .result-label { color: #4ade80; }
+.fake  .result-label { color: var(--pink); }
+.error .result-label { color: #fbbf24; }
+.result-detail { font-size: .9rem; color: var(--muted); line-height: 1.6; }
+
+.confidence-bar-wrap { margin-top: 16px; }
+.confidence-meta {
+  display: flex; justify-content: space-between;
+  font-size: .78rem; color: var(--muted); margin-bottom: 6px;
+}
+.confidence-bar { height: 8px; border-radius: 4px; background: rgba(255,255,255,.07); overflow: hidden; }
+.confidence-fill { height: 100%; border-radius: 4px; transition: width .8s ease; }
+.real  .confidence-fill { background: #4ade80; }
+.fake  .confidence-fill { background: var(--pink); }
+
+/* ── Probability bars (from your original script.js) ── */
+.probabilities { margin-top: 20px; }
+.probabilities h4 {
+  font-family: var(--font-head); font-size: .9rem; font-weight: 700;
+  color: var(--muted); letter-spacing: .06em; margin-bottom: 14px;
+}
+.probability-item {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px; margin-bottom: 12px;
+}
+.probability-label { font-size: .8rem; color: var(--muted); margin-bottom: 6px; }
+.probability-bar-container {
+  height: 6px; border-radius: 3px; background: rgba(255,255,255,.07);
+  overflow: hidden; width: 100%;
+}
+.probability-bar-fill { height: 100%; border-radius: 3px; background: var(--pink); }
+.probability-value { font-family: var(--font-head); font-size: .85rem; font-weight: 700; min-width: 48px; text-align: right; }
+
+@media (max-width: 900px) {
+  .predict-wrap { padding: 48px 20px; }
+  .predict-card { padding: 24px 20px; }
+}

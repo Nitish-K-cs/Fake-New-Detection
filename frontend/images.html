@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vigilance Tech — Images</title>
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/nav.css" />
+  <link rel="stylesheet" href="css/images.css" />
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav>
+    <a class="nav-logo" href="index.html">Vigilance<span>Tech</span></a>
+    <div class="nav-links">
+      <a class="nav-link" id="nav-home"    href="index.html">Home</a>
+      <a class="nav-link" id="nav-predict" href="predict.html">Predict</a>
+      <a class="nav-link" id="nav-images"  href="images.html">Images</a>
+      <a class="nav-link" id="nav-about"   href="about.html">About</a>
+      <a class="nav-cta"                   href="predict.html">SCAN NOW</a>
+    </div>
+  </nav>
+
+  <!-- ── IMAGES CONTENT ── -->
+  <main class="images-wrap">
+    <div class="section-label">Image Forensics</div>
+    <h1 class="section-title">Detect Manipulated Images</h1>
+    <p class="section-desc">
+      Upload any image and our forensic engine will analyze it for deepfakes,
+      splicing, compression artifacts, and metadata inconsistencies.
+    </p>
+
+    <!-- Drop zone -->
+    <div
+      class="upload-zone"
+      id="uploadZone"
+      onclick="document.getElementById('fileInput').click()"
+    >
+      <div class="upload-icon">📂</div>
+      <div class="upload-title">Drop your image here</div>
+      <div class="upload-desc">Supports JPG, PNG, WEBP — up to 10MB</div>
+      <button
+        class="upload-btn"
+        onclick="event.stopPropagation(); document.getElementById('fileInput').click()"
+      >
+        Choose File
+      </button>
+      <input type="file" id="fileInput" accept="image/*" />
+    </div>
+
+    <!-- Result panel (hidden until image uploaded) -->
+    <div class="image-result" id="imageResult">
+      <img class="image-preview" id="imagePreview" src="" alt="Uploaded image preview" />
+      <div class="img-result-label" id="imgResultLabel"></div>
+      <div class="img-result-detail" id="imgResultDetail"></div>
+      <div class="img-metrics">
+        <div class="img-metric">
+          <div class="img-metric-val" id="metricAuth">—</div>
+          <div class="img-metric-label">AUTHENTICITY</div>
+        </div>
+        <div class="img-metric">
+          <div class="img-metric-val" id="metricMeta">—</div>
+          <div class="img-metric-label">METADATA</div>
+        </div>
+        <div class="img-metric">
+          <div class="img-metric-val" id="metricCompress">—</div>
+          <div class="img-metric-label">COMPRESSION</div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div>© 2026 <span>Vigilance Tech</span> — AI-Powered Forensic Analysis</div>
+    <div>Powered by Machine Learning &amp; NLP</div>
+  </footer>
+
+  <script src="js/nav.js"></script>
+  <script src="js/images.js"></script>
+</body>
+</html>

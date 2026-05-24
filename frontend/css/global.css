@@ -1,0 +1,83 @@
+/* ═══════════════════════════════════════
+   global.css — shared tokens & base styles
+   ═══════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --pink:       #ff3d7f;
+  --pink-light: #ff79a8;
+  --purple:     #9b59b6;
+  --purple-dim: #6c3483;
+  --bg:         #0d0d0f;
+  --bg2:        #131316;
+  --bg3:        #1a1a1f;
+  --card:       #18181d;
+  --border:     rgba(255,61,127,0.18);
+  --text:       #f0f0f4;
+  --muted:      #8888a0;
+  --font-head:  'Syne', sans-serif;
+  --font-body:  'DM Sans', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: none; }
+}
+.page-anim { animation: fadeIn 0.35s ease; }
+
+/* ── Shared section headings ── */
+.section-label {
+  font-size: .72rem; letter-spacing: .14em; color: var(--pink);
+  font-weight: 700; text-transform: uppercase; margin-bottom: 12px;
+}
+.section-title {
+  font-family: var(--font-head); font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 800; letter-spacing: -.02em; margin-bottom: 14px;
+}
+.section-desc {
+  color: var(--muted); font-size: 1rem; line-height: 1.7; max-width: 560px;
+}
+
+/* ── Shared buttons ── */
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--pink); color: #fff; border: none; cursor: pointer;
+  padding: 14px 28px; border-radius: 10px; font-family: var(--font-body);
+  font-size: .95rem; font-weight: 600; transition: background .2s, transform .15s;
+  text-decoration: none;
+}
+.btn-primary:hover { background: #e0346d; transform: translateY(-2px); }
+
+.btn-secondary {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--bg3); color: var(--text); border: 1px solid rgba(255,255,255,.12);
+  cursor: pointer; padding: 14px 28px; border-radius: 10px; font-family: var(--font-body);
+  font-size: .95rem; font-weight: 600; transition: border-color .2s, transform .15s;
+  text-decoration: none;
+}
+.btn-secondary:hover { border-color: var(--pink-light); transform: translateY(-2px); }
+
+/* ── Footer ── */
+footer {
+  border-top: 1px solid rgba(255,255,255,.06); padding: 24px 80px;
+  display: flex; align-items: center; justify-content: space-between;
+  font-size: .8rem; color: var(--muted);
+}
+footer span { color: var(--pink); font-weight: 600; }
+
+@media (max-width: 900px) {
+  footer { flex-direction: column; gap: 8px; padding: 20px 24px; text-align: center; }
+}

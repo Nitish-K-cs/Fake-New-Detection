@@ -1,0 +1,50 @@
+/* ═══════════════════
+   nav.css
+   ═══════════════════ */
+
+nav {
+  position: sticky; top: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 48px; height: 64px;
+  background: rgba(13,13,15,0.85);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-logo {
+  font-family: var(--font-head); font-size: 1.2rem; font-weight: 700;
+  color: var(--text); letter-spacing: -.01em; cursor: pointer;
+  text-decoration: none;
+}
+.nav-logo span { color: var(--pink); }
+
+.nav-links { display: flex; gap: 8px; align-items: center; }
+
+.nav-link {
+  font-family: var(--font-body); font-size: .9rem; font-weight: 500;
+  color: var(--muted); background: none; border: none; cursor: pointer;
+  padding: 6px 14px; border-radius: 6px; transition: color .2s, background .2s;
+  position: relative; text-decoration: none;
+}
+.nav-link::after {
+  content: ''; position: absolute; bottom: 2px; left: 50%; transform: translateX(-50%);
+  width: 0; height: 2px; background: var(--pink); border-radius: 2px; transition: width .2s;
+}
+.nav-link:hover { color: var(--text); }
+.nav-link.active { color: var(--text); }
+.nav-link.active::after { width: 60%; }
+
+.nav-cta {
+  background: var(--pink); color: #fff; border: none; cursor: pointer;
+  padding: 8px 22px; border-radius: 8px; font-family: var(--font-body);
+  font-size: .85rem; font-weight: 600; letter-spacing: .04em;
+  transition: background .2s, transform .15s; text-decoration: none;
+}
+.nav-cta:hover { background: #e0346d; transform: translateY(-1px); }
+
+@media (max-width: 900px) {
+  nav { padding: 0 20px; }
+  .nav-links { gap: 2px; }
+  .nav-link { padding: 6px 8px; font-size: .8rem; }
+  .nav-cta { padding: 7px 14px; font-size: .78rem; }
+}
