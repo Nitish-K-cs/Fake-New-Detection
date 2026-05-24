@@ -2,9 +2,9 @@
    images.css
    ═══════════════════ */
 
-.images-wrap { padding: 80px; }
-.images-wrap .section-title {font-weight: 700;}
-.images-wrap .section-desc { margin-bottom: 0; }
+.images-wrap { padding: 80px; text-align: center;}
+.images-wrap .section-title {font-weight: 700; text-align: center;}
+.images-wrap .section-desc {  text-align: center; margin: 0 auto 40px;}
 
 /* ── Upload zone ── */
 .upload-zone {
