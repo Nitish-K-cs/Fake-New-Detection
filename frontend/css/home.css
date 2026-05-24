@@ -41,7 +41,7 @@
 /* Hero text */
 .hero-title {
   font-family: var(--font-head); font-size: clamp(2.4rem, 4vw, 3.6rem);
-  font-weight: 800; line-height: 1.08; letter-spacing: -.03em; margin-bottom: 24px;
+  font-weight: 700; line-height: 1.08; letter-spacing: -.03em; margin-bottom: 24px;
 }
 .hero-title .accent { color: var(--pink); }
 .hero-desc { font-size: 1rem; color: var(--muted); line-height: 1.7; max-width: 480px; margin-bottom: 40px; }

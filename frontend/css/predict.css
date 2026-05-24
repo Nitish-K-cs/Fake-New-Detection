@@ -6,7 +6,7 @@
   max-width: 780px; margin: 0 auto; padding: 80px 48px;
 }
 .predict-wrap .section-label,
-.predict-wrap .section-title { text-align: center; }
+.predict-wrap .section-title { font-weight: 700; text-align: center; }
 .predict-wrap .section-desc  { text-align: center; margin: 0 auto 40px; }
 
 .predict-card {

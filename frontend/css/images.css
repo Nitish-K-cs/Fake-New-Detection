@@ -3,6 +3,7 @@
    ═══════════════════ */
 
 .images-wrap { padding: 80px; }
+.images-wrap .section-title {font-weight: 700;}
 .images-wrap .section-desc { margin-bottom: 0; }
 
 /* ── Upload zone ── */
